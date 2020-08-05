@@ -2,8 +2,8 @@
 #define QX_CIRCULO_H
 // Struct Ponto;
 struct Ponto{
-    int x;
-    int y;
+    float x;
+    float y;
 };
 
 class Circulo{
@@ -13,17 +13,21 @@ class Circulo{
         // destrutor
         ~Circulo();
     private:
-        
+        Ponto* _p = new Ponto;
         float raio;
-        Ponto _p = {0,0};
+        
     public: 
         
-        //  atribui novo valor ao raio do c´ırculo;
+        //  atribui novo valor ao raio do círculo;
         void setRaio(float r);
+        // atribui novo valor à coordenada x
+        void setX(float v);
+        // atribui novo valor à coordenada y
+        void setY(float v); 
         // obtém o raio
         float getRaio();
         // obtém o centro
-        Ponto getCentro();
+        Ponto* getCentro();
         // calcula a área do círculo
         float area();
         // verifica se o Ponto p está dentro do círculo.
