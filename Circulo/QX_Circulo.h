@@ -13,7 +13,7 @@ class Circulo{
         // destrutor
         ~Circulo();
     private:
-        Ponto* _p = new Ponto;
+        Ponto* _p = nullptr;
         float raio;
         
     public: 

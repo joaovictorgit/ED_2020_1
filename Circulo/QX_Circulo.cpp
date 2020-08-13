@@ -5,9 +5,13 @@
 
 //  cria um cíırculo cujo centro é um atributo do tipo Ponto e raio é um float;
 Circulo::Circulo(float raio, Ponto centro){
-    setRaio(raio);
-    setX(centro.x);
-    setY(centro.y);
+    setRaio(raio);    
+    _p = new Ponto;
+    if(_p != nullptr){
+        setX(centro.x);
+        setY(centro.y);
+    }
+    
     
 }
 // destrutor
@@ -26,10 +30,14 @@ void Circulo::setRaio(float r){
 // atribui novo valor à coordenada x
 void Circulo::setX(float v){
     _p->x = v;
+    std::cout << "x -> " << _p->x << "\n";
+    
 }
 // atribui novo valor à coordenada y
 void Circulo::setY(float v){
     _p->y = v;
+    std::cout << "y -> " << _p->y << "\n";
+    
 } 
 
 // obtém o raio
@@ -38,9 +46,7 @@ float Circulo::getRaio(){
 }
 // obtém o centro
 Ponto* Circulo::getCentro(){
-    if(_p != nullptr){
-        std::cout << "(" << (*_p).x << ":" << (*_p).y << ")\n";
-    }
+    
     return _p;
 }
 // calcula a área do círculo
